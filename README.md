@@ -7,8 +7,8 @@ Configure default watchers of the issue
 
 ## Usage
 - Log in Redmine with Admistrator.
-- Go to Administration - Modules.
-- Find 'Configure isssue watchers' plugin
+- Go to Administration - Plugins.
+- Find 'Configure issue watchers' plugin
 - Click parameters
 - Configure watcher settings
 
@@ -17,11 +17,7 @@ In Redmine folder,
 ```bash
 cd plugins
 git clone https://github.com/destillat/watchers
-cd ..
-bundle install --without test
-bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 ```
-
 Finally restart Redmine.
 
 ## License

@@ -1,9 +1,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "watchers/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "watchers"
   s.version     = Watchers::VERSION
@@ -14,8 +12,8 @@ Gem::Specification.new do |s|
   s.description = "Redmine plugin for issue watchers configuration."
   s.license     = "Proprietary"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "init.rb"]
+  s.files = Dir["{app,config,lib}/**/*", "README.md", "init.rb"]
 
-  s.add_dependency "rails", "4.2.7.1"
+  s.add_dependency "redmine", "~> 3.3.3"
   s.require_paths = ["lib"]
 end

@@ -13,8 +13,9 @@ module Watchers
       # Same as typing in the class
       base.class_eval do
         unloadable # Send unloadable so it will not be unloaded in development
-        before_create :add_creator_to_watchers if Setting.plugin_watchers[:add_creator_to_issue_watchers]
-        before_save :add_assignee_to_watchers if Setting.plugin_watchers[:add_assignee_to_watchers]
+        before_create :add_creator_to_watchers
+        before_create :add_assignee_to_watchers_of_created_issue
+        before_update :add_assignee_to_watchers_of_edited_issue
       end
 
     end
@@ -25,11 +26,15 @@ module Watchers
 
     module InstanceMethods
       def add_creator_to_watchers
-        self.add_watcher(User.current)
+        self.add_watcher(User.current) if Setting.plugin_watchers['add_creator_to_issue_watchers'] == '1'
       end
 
-      def add_assignee_to_watchers
-        self.add_watcher(assigned_to) if !watched_by?(assigned_to)
+      def add_assignee_to_watchers_of_created_issue
+        self.add_watcher(assigned_to) if Setting.plugin_watchers['add_assignee_to_watchers_of_created_issue'] == '1' && !watched_by?(assigned_to)
+      end
+
+      def add_assignee_to_watchers_of_edited_issue
+        self.add_watcher(assigned_to) if Setting.plugin_watchers['add_assignee_to_watchers_of_edited_issue'] == '1' && !watched_by?(assigned_to)
       end
     end
   end

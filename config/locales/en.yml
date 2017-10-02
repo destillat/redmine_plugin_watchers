@@ -1,4 +1,5 @@
 en:
-  message_add_to_issue_watchers: Add to issue watchers list
+  message_add_to_created_issue_watchers: When create issue, add to issue watchers list
   label_add_creator_to_issue_watchers: issue creator
   label_add_assignee_to_watchers: assignee
+  message_add_to_changed_issue_watchers: When change assignee, add to issue watchers list

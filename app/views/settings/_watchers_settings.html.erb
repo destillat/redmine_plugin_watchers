@@ -1,12 +1,21 @@
 <p>
-  <%= l(:message_add_to_issue_watchers) %> :
+  <%= l(:message_add_to_created_issue_watchers) %> :
 </p>
 
 <p>
-  <%= check_box_tag('settings[add_creator_to_issue_watchers]', "1", @settings['add_creator_to_issue_watchers'].to_s == "1") %>
+  <%= check_box_tag('settings[add_creator_to_issue_watchers]', '1', @settings['add_creator_to_issue_watchers'].to_s == '1') %>
   <label><%= l(:label_add_creator_to_issue_watchers) %></label>
 </p>
 <p>
-  <%= check_box_tag('settings[add_assignee_to_watchers]', "1", @settings['add_assignee_to_watchers'].to_s == "1") %>
+  <%= check_box_tag('settings[add_assignee_to_watchers_of_created_issue]', '1', @settings['add_assignee_to_watchers_of_created_issue'].to_s == '1') %>
+  <label><%= l(:label_add_assignee_to_watchers) %></label>
+</p>
+
+<p>
+  <%= l(:message_add_to_changed_issue_watchers) %> :
+</p>
+
+<p>
+  <%= check_box_tag('settings[add_assignee_to_watchers_of_edited_issue]', '1', @settings['add_assignee_to_watchers_of_edited_issue'].to_s == '1') %>
   <label><%= l(:label_add_assignee_to_watchers) %></label>
 </p>
