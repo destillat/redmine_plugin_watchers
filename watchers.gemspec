@@ -13,7 +13,5 @@ Gem::Specification.new do |s|
   s.license     = "Proprietary"
 
   s.files = Dir["{app,config,lib}/**/*", "README.md", "init.rb"]
-
-  s.add_dependency "redmine", "~> 3.3.3"
   s.require_paths = ["lib"]
 end
