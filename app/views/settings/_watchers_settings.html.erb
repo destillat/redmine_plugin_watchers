@@ -1,0 +1,12 @@
+<p>
+  <%= l(:message_add_to_issue_watchers) %> :
+</p>
+
+<p>
+  <%= check_box_tag('settings[add_creator_to_issue_watchers]', "1", @settings['add_creator_to_issue_watchers'].to_s == "1") %>
+  <label><%= l(:label_add_creator_to_issue_watchers) %></label>
+</p>
+<p>
+  <%= check_box_tag('settings[add_assignee_to_watchers]', "1", @settings['add_assignee_to_watchers'].to_s == "1") %>
+  <label><%= l(:label_add_assignee_to_watchers) %></label>
+</p>

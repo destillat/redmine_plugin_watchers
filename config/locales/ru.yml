@@ -1,0 +1,4 @@
+ru:
+  message_add_to_issue_watchers:  При создании новой задачи автоматически добавлять в наблюдатели
+  label_add_creator_to_issue_watchers: автора задачи
+  label_add_assignee_to_watchers: сотрудника, кому назначена задача
