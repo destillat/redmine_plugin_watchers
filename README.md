@@ -16,7 +16,7 @@ Configure default watchers of the issue
 In Redmine folder,
 ```bash
 cd plugins
-git clone https://github.com/destillat/redmine_plugin_watchers
+git clone https://github.com/destillat/redmine_plugin_watchers watchers
 ```
 Finally restart Redmine.
 
